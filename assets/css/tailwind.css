@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-offwhite: #F6F6F6;
+
+  --font-thunder: "Thunder", sans-serif;
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1535px;
+  width: 100%;
+  margin: auto;
+  padding-inline: 20px;
+}
+
+
+
+
+@layer base {
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* =========================
+   CSS RESET / BASE
+========================= */
+
+/* Box sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin & padding */
+
+/* HTML & body */
+body {
+  height: 100%;
+  font-family: "Inter Tight", sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+}
+
+/* font family */
+.inter-tight {
+  font-family: "Inter Tight", sans-serif;
+}
+
+.thunder {
+  font-family: "Thunder", sans-serif;
+}
+
+.jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+
+/* Remove link underline */
+a {
+  text-decoration: none;
+}
+
+/* Images responsive */
+img,
+picture,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+/* Form elements inherit font */
+
+
+/* Button cursor */
+button {
+  cursor: pointer;
+}
+
+/* Table reset */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+/* smooth scrooll */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Lenis end */
+
+.image-drop-effect {
+    height: 100dvh;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-drop-effect .content-effect {
+    font-size: min(60px, 5.6vw);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    letter-spacing: -0.03em;
+}
+
+.image-drop-effect .content-effect span {
+    display: block;
+    width: max-content;
+    color: white;
+}
+
+.image-drop-effect .content-effect span:last-child {
+    color: #999;
+}
+
+.image-drop-effect img {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 4%;
+    z-index: 5;
+}
+
+.image-drop-effect .medias img {
+    width: 1px;
+    height: 1px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .image-drop-effect img {
+        width: 35vw;
+        height: 35vw;
+    }
+}
